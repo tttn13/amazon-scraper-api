@@ -8,6 +8,11 @@ const baseURL = `http://api.scraperapi.com?api_key=${API_KEY}&autoparse=true`
 
 app.use(express.json())
 
+// Welcome route
+app.get('/', async (req, res) => {
+    res.send('Welcome to Amazon Scraper API!');
+});
+
 //Get product details 
 app.get('/products/:productID', async (req,res) => {
     const { productID } = req.params;
